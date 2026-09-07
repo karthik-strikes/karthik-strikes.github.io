@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sai Karthik Kosuri — NLP &amp; Health AI</title>
+<meta name="description" content="Sai Karthik Kosuri is a Data Scientist at the University of Pennsylvania building human-in-the-loop AI for evidence synthesis in medicine, and studying speech and language markers of health in older adults.">
+<meta name="author" content="Sai Karthik Kosuri">
+<link rel="canonical" href="https://karthik-strikes.github.io/">
+<meta name="theme-color" content="#faf7f2">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Sai Karthik Kosuri — NLP &amp; Health AI">
+<meta property="og:description" content="Data Scientist at the University of Pennsylvania. Human-in-the-loop AI for evidence synthesis in medicine; speech and language markers of health.">
+<meta property="og:url" content="https://karthik-strikes.github.io/">
+<meta property="og:image" content="https://karthik-strikes.github.io/assets/headshot.jpg">
+<meta property="og:image:alt" content="Portrait of Sai Karthik Kosuri">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sai Karthik Kosuri — NLP &amp; Health AI">
+<meta name="twitter:description" content="Data Scientist at the University of Pennsylvania. Human-in-the-loop AI for evidence synthesis in medicine; speech and language markers of health.">
+<meta name="twitter:image" content="https://karthik-strikes.github.io/assets/headshot.jpg">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/headshot.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#faf7f2; --ink:#1d1b17; --body:#4a453c; --muted:#6d675c; --dim:#8a8272;
+  --rule:#e7e1d5; --rule-soft:#efe9dd; --panel:#f2eee4;
+  --accent:#2f6b4a; --accent-soft:#8fc3a6; --accent-wash:#c9e6d5;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Public Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+@supports (color: oklch(0.45 0.09 155)){
+  :root{ --accent:oklch(0.45 0.09 155); --accent-soft:oklch(0.75 0.06 155); --accent-wash:oklch(0.9 0.04 155); }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+section,header,footer{scroll-margin-top:88px}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--ink)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+::selection{background:var(--accent-wash)}
+img{max-width:100%}
+
+.wrap{max-width:820px;margin:0 auto;padding:0 32px}
+
+/* nav */
+.nav{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+     padding:36px 0 20px;border-bottom:1px solid var(--rule);
+     position:sticky;top:0;background:var(--bg);z-index:10}
+.nav-name{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--ink);white-space:nowrap}
+.nav-links{display:flex;gap:22px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.cv{color:var(--accent)}
+
+/* header */
+.intro{padding:84px 0 56px;display:flex;gap:48px;align-items:flex-start;flex-wrap:wrap}
+.avatar{width:180px;height:180px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid var(--rule)}
+.intro-body{flex:1;min-width:300px}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+h1{font-family:var(--serif);font-weight:500;font-size:56px;line-height:1.05;margin:0 0 26px;letter-spacing:-.01em}
+.lede{font-size:17px;line-height:1.7;color:var(--body);max-width:640px;margin:0 0 18px;text-wrap:pretty}
+.interests{font-size:15px;line-height:1.7;color:var(--muted);max-width:640px;margin:0;text-wrap:pretty}
+.label{color:var(--dim);font-size:12px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:8px}
+.contact{display:flex;gap:24px;margin-top:34px;font-size:14px;flex-wrap:wrap}
+.contact a{border-bottom:1px solid var(--accent-soft);padding-bottom:2px}
+
+/* sections */
+section{border-top:1px solid var(--rule);padding:48px 0}
+h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:600;margin:0 0 30px}
+#experience h2{margin-bottom:36px}
+.stack{display:grid;gap:16px;max-width:680px}
+.stack.loose{gap:18px}
+.row{display:grid;grid-template-columns:110px 1fr;gap:20px;font-size:15px;line-height:1.6}
+.row .when{color:var(--accent);font-size:13px;font-weight:500}
+.row .what{color:var(--body)}
+
+/* publications */
+.pubs{display:grid;gap:40px}
+.pubs h3{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.25;margin:0 0 10px}
+.authors{font-size:14px;color:var(--dim);margin:0 0 8px;line-height:1.6}
+.authors .me{color:var(--ink);font-weight:500}
+.venue{font-size:14px;color:#5a5449;margin:0 0 12px;font-style:italic}
+.links{display:flex;gap:20px;font-size:13px;flex-wrap:wrap;align-items:center}
+.linkish{background:none;border:0;padding:0;margin:0;font:inherit;color:var(--accent);cursor:pointer}
+.linkish:hover{color:var(--ink)}
+pre.bib{background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:16px 18px;
+        font-size:12px;line-height:1.6;overflow-x:auto;margin:14px 0 0;
+        font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--body);white-space:pre-wrap}
+pre.bib[hidden]{display:none}
+.earlier{border-top:1px solid var(--rule-soft);padding-top:24px;font-size:13px;line-height:1.7;color:var(--dim);max-width:680px}
+
+/* experience + education */
+.entries{display:grid;gap:40px}
+.entry{display:grid;grid-template-columns:160px 1fr;gap:24px}
+.entry .when{font-size:13px;color:var(--dim);line-height:1.6}
+.entry h3{font-family:var(--serif);font-weight:600;font-size:24px;margin:0 0 4px}
+.role{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.entry ul{margin:0;padding-left:18px;display:grid;gap:9px;font-size:15px;line-height:1.65;color:var(--body)}
+.edu{display:grid;gap:24px}
+.edu .school{font-family:var(--serif);font-weight:600;font-size:20px}
+.edu .detail{font-size:14px;color:#5a5449}
+
+/* footer */
+.foot{border-top:1px solid var(--rule);padding:32px 0 56px;display:flex;justify-content:space-between;
+      align-items:baseline;font-size:13px;color:var(--dim);flex-wrap:wrap;gap:12px}
+.foot-links{display:flex;gap:20px}
+
+@media (max-width:640px){
+  .wrap{padding:0 20px}
+  .nav{flex-direction:column;align-items:flex-start;gap:12px;padding:22px 0 14px}
+  .nav-links{justify-content:flex-start;gap:16px;row-gap:8px}
+  .intro{padding:44px 0 40px;gap:28px}
+  .avatar{width:132px;height:132px}
+  .intro-body{min-width:0}
+  h1{font-size:38px;margin-bottom:20px}
+  .lede{font-size:16px}
+  .contact{gap:16px;row-gap:12px;margin-top:26px}
+  section{padding:36px 0}
+  .row,.entry{grid-template-columns:1fr;gap:4px}
+  .entry{gap:8px}
+}
+
+@media print{
+  .nav,.contact{display:none}
+  body{background:#fff}
+  a{color:#000}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav">
+    <a class="nav-name" href="#top">Sai Karthik Kosuri</a>
+    <div class="nav-links">
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#talks">Talks</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a class="cv" href="assets/kosuri-cv.pdf">CV &darr;</a>
+    </div>
+  </nav>
+
+  <header class="intro" id="top">
+    <img class="avatar" src="assets/headshot.jpg" width="180" height="180" alt="Portrait of Sai Karthik Kosuri">
+    <div class="intro-body">
+      <div class="eyebrow">Researcher &middot; NLP &amp; Health AI</div>
+      <h1>Sai Karthik Kosuri</h1>
+      <p class="lede">I'm a Data Scientist at the University of Pennsylvania, working with the Center for Integrative Global Oral Health and Penn CIS. I build human-in-the-loop AI systems for evidence synthesis in medicine, and study speech and language markers of health in older adults.</p>
+      <p class="interests"><span class="label">Research interests</span>Human-in-the-loop AI for systematic reviews &middot; NLP for health &middot; multimodal speech &amp; language analysis &middot; agentic LLM systems for clinical evidence</p>
+      <div class="contact">
+        <a href="mailto:karthik9@upenn.edu">karthik9@upenn.edu</a>
+        <a href="https://www.linkedin.com/in/karthikkosuri9/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/karthik-strikes" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="assets/kosuri-cv.pdf">CV (PDF)</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="news">
+    <h2>News</h2>
+    <div class="stack">
+      <div class="row"><div class="when">Sep 2026</div><div class="what">Preprint on predictors of loneliness in older adults posted to <a href="https://arxiv.org/abs/2609.02606" target="_blank" rel="noopener noreferrer">arXiv</a>.</div></div>
+      <div class="row"><div class="when">Aug 2026</div><div class="what">EviStreams accepted at EMNLP 2026, System Demonstrations. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7445870233686441984/" target="_blank" rel="noopener noreferrer">Announcement</a></div></div>
+      <div class="row"><div class="when">Mar 2026</div><div class="what">Presented a poster on AI-Enhanced Living Evidence Synthesis in Oral Health at <a href="#talks">IADR 2026</a>, San Diego.</div></div>
+      <div class="row"><div class="when">Jun 2024</div><div class="what">Joined the University of Pennsylvania as a Data Scientist.</div></div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <div class="pubs">
+      <article>
+        <h3>EviStreams: Human-in-the-Loop AI Data Extraction for Systematic Reviews in Medicine</h3>
+        <p class="authors"><span class="me">Sai Karthik Kosuri</span>, Ankita Shashikant Bhosale, Michael Glick, Alonso Carrasco-Labra, Chris Callison-Burch</p>
+        <p class="venue">Accepted at EMNLP 2026, System Demonstrations. To appear.</p>
+        <div class="links">
+          <a href="https://evistreams.com/demo" target="_blank" rel="noopener noreferrer">Live demo</a>
+          <a href="assets/evistreams-emnlp-2026.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+        </div>
+      </article>
+      <article>
+        <h3>Predictors of Loneliness in Older Adults Using Multimodal Analysis of Speech and Language</h3>
+        <p class="authors">Vinmay Khandode, <span class="me">Sai Karthik Kosuri</span>, Neil K. R. Sehgal, Adam Greene, Elif Alpoge, Elana Duffy, Matthew Lee Smith, Thomas K.M. Cudjoe, Sharath Chandra Guntuku</p>
+        <p class="venue">arXiv preprint arXiv:2609.02606, 2026.</p>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2609.02606" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="assets/loneliness-arxiv-2609.02606.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+          <button class="linkish" type="button" data-bib="bib-loneliness" aria-expanded="false" aria-controls="bib-loneliness">BibTeX</button>
+        </div>
+<pre class="bib" id="bib-loneliness" hidden>@article{khandode2026loneliness,
+  title   = {Predictors of Loneliness in Older Adults Using Multimodal Analysis of Speech and Language},
+  author  = {Khandode, Vinmay and Kosuri, Sai Karthik and Sehgal, Neil K. R. and Greene, Adam and Alpoge, Elif and Duffy, Elana and Smith, Matthew Lee and Cudjoe, Thomas K. M. and Guntuku, Sharath Chandra},
+  journal = {arXiv preprint arXiv:2609.02606},
+  year    = {2026}
+}</pre>
+      </article>
+      <div class="earlier">
+        <span class="label">Earlier work</span>
+        K Sai Karthik, CH Naveen Aaditya, Ravi Kiran, Swarnalatha P. Travel Package Booking Application with API Bot. <em>IJRTE 8(4)</em>, 2019. <a href="https://www.ijrte.org/wp-content/uploads/papers/v8i4/D8706118419.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="talks">
+    <h2>Talks &amp; Demos</h2>
+    <div class="stack loose">
+      <div class="row">
+        <div class="when">Oct 2026</div>
+        <div class="what">System demonstration of <a href="https://evistreams.com/demo" target="_blank" rel="noopener noreferrer">EviStreams</a> at EMNLP 2026.</div>
+      </div>
+      <div class="row">
+        <div class="when">Mar 2026</div>
+        <div class="what">Poster &mdash; <em>AI-Enhanced Living Evidence Synthesis in Oral Health</em>. S.K. Kosuri, A.S. Bhosale, F. Verdugo-Paiva, O. Urquhart, C. Martins-Pfeifer, M. Glick, A. Carrasco-Labra, C. Callison-Burch. 2026 IADR/AADOCR/CADR General Session, San Diego. Presentation ID 2040, Evidence-based Dentistry. <a href="assets/iadr-2026-poster.jpg" target="_blank" rel="noopener noreferrer">Poster</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="entries">
+      <article class="entry">
+        <div class="when">Jun 2024 &mdash; Present<br>Philadelphia, PA</div>
+        <div>
+          <h3>University of Pennsylvania</h3>
+          <div class="role">Data Scientist</div>
+          <ul>
+            <li>Built a RAG system over 45K PDF articles &mdash; GTE-ModernColBERT embeddings in Weaviate, integrated with an MCP server for query handling.</li>
+            <li>Built a multimodal ML framework combining linguistic and acoustic features across 1,465 interviews to predict loneliness in older adults.</li>
+            <li>Developing an agentic AI system for automated clinical living-guideline extraction from RCTs, reducing manual curation time by 75%.</li>
+            <li>Created end-to-end ETL pipelines for a longitudinal participant study; automated survey scheduling and payment workflows.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="when">Jun &mdash; Aug 2023<br>Cary, NC</div>
+        <div>
+          <h3>Siemens Healthineers</h3>
+          <div class="role">Data Science &amp; Analytics Intern</div>
+          <ul>
+            <li>Led a BI migration from Power BI to Qlik Sense, improving analytics capabilities by 30% and saving $50K annually.</li>
+            <li>Built an automated ETL pipeline (Python, SQL, Teradata) for enterprise healthcare datasets, cutting processing errors by 50%.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="entry">
+        <div class="when">Apr 2021 &mdash; Jul 2022<br>Hyderabad, India</div>
+        <div>
+          <h3>Broadridge Financial Solutions</h3>
+          <div class="role">Software Engineer</div>
+          <ul>
+            <li>Developed REST APIs in Node.js and a concurrent Go pipeline streaming real-time data to AWS S3, cutting retrieval times by 30%.</li>
+            <li>Automated infrastructure with Jenkins CI/CD and Terraform, reducing provisioning time by 70%.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu">
+      <div class="entry">
+        <div class="when">2022 &mdash; 2024</div>
+        <div><span class="school">Syracuse University</span><span class="detail"> &middot; M.S. Computer Science, GPA 3.8</span></div>
+      </div>
+      <div class="entry">
+        <div class="when">2017 &mdash; 2021</div>
+        <div><span class="school">Vellore Institute of Technology</span><span class="detail"> &middot; B.Tech CSE, GPA 8.49</span></div>
+      </div>
+      <div class="entry">
+        <div class="when">Certification</div>
+        <div class="detail">AWS Certified Solutions Architect &mdash; Associate</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div>Philadelphia, PA &middot; <a href="mailto:karthik9@upenn.edu">karthik9@upenn.edu</a></div>
+    <div class="foot-links">
+      <a href="https://www.linkedin.com/in/karthikkosuri9/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/karthik-strikes" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+document.querySelectorAll('[data-bib]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var panel = document.getElementById(btn.dataset.bib);
+    var open = panel.hasAttribute('hidden');
+    panel.toggleAttribute('hidden', !open);
+    btn.setAttribute('aria-expanded', String(open));
+  });
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sai Karthik Kosuri",
+  "alternateName": "Karthik Kosuri",
+  "url": "https://karthik-strikes.github.io/",
+  "image": "https://karthik-strikes.github.io/assets/headshot.jpg",
+  "email": "mailto:karthik9@upenn.edu",
+  "jobTitle": "Data Scientist",
+  "worksFor": { "@type": "Organization", "name": "University of Pennsylvania" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Syracuse University" },
+    { "@type": "CollegeOrUniversity", "name": "Vellore Institute of Technology" }
+  ],
+  "knowsAbout": ["Natural Language Processing", "Health AI", "Evidence Synthesis", "Systematic Reviews", "Speech and Language Analysis"],
+  "sameAs": [
+    "https://www.linkedin.com/in/karthikkosuri9/",
+    "https://github.com/karthik-strikes"
+  ]
+}
+</script>
+</body>
+</html>
