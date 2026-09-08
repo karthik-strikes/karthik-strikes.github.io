@@ -13,12 +13,14 @@
 <meta property="og:title" content="Sai Karthik Kosuri — NLP &amp; Health AI">
 <meta property="og:description" content="Researcher in NLP and health AI at the University of Pennsylvania. Human-in-the-loop AI for evidence synthesis in medicine; speech and language markers of health.">
 <meta property="og:url" content="https://karthik-strikes.github.io/">
-<meta property="og:image" content="https://karthik-strikes.github.io/assets/headshot.jpg">
-<meta property="og:image:alt" content="Portrait of Sai Karthik Kosuri">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://karthik-strikes.github.io/assets/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sai Karthik Kosuri, Researcher in NLP and Health AI, University of Pennsylvania">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sai Karthik Kosuri — NLP &amp; Health AI">
 <meta name="twitter:description" content="Researcher in NLP and health AI at the University of Pennsylvania. Human-in-the-loop AI for evidence synthesis in medicine; speech and language markers of health.">
-<meta name="twitter:image" content="https://karthik-strikes.github.io/assets/headshot.jpg">
+<meta name="twitter:image" content="https://karthik-strikes.github.io/assets/og-card.jpg">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/headshot.jpg">
@@ -59,6 +61,14 @@ img{max-width:100%}
 .nav-links a{color:var(--muted)}
 .nav-links a:hover{color:var(--ink)}
 .nav-links a.cv{color:var(--accent)}
+.nav-links a{padding-bottom:4px;border-bottom:2px solid transparent;
+             transition:color .15s ease,border-color .15s ease}
+.nav-links a.active{color:var(--ink);border-bottom-color:var(--accent)}
+
+/* skip link */
+.skip{position:absolute;left:-9999px;top:0;background:var(--bg);color:var(--accent);
+      border:1px solid var(--accent);border-radius:3px;padding:10px 16px;font-size:14px;z-index:100}
+.skip:focus{left:16px;top:16px}
 
 /* header */
 .intro{padding:84px 0 56px;display:flex;gap:48px;align-items:flex-start;flex-wrap:wrap}
@@ -69,8 +79,15 @@ h1{font-family:var(--serif);font-weight:500;font-size:56px;line-height:1.05;marg
 .lede{font-size:17px;line-height:1.7;color:var(--body);max-width:640px;margin:0 0 18px;text-wrap:pretty}
 .interests{font-size:15px;line-height:1.7;color:var(--muted);max-width:640px;margin:0;text-wrap:pretty}
 .label{color:var(--dim);font-size:12px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:8px}
-.contact{display:flex;gap:24px;margin-top:34px;font-size:14px;flex-wrap:wrap}
+.collab{font-size:15px;line-height:1.7;color:var(--muted);max-width:640px;margin:18px 0 0;text-wrap:pretty}
+.contact{display:flex;gap:24px;margin-top:34px;font-size:14px;flex-wrap:wrap;align-items:center}
 .contact a{border-bottom:1px solid var(--accent-soft);padding-bottom:2px}
+
+/* copy email */
+.copy{background:none;border:0;padding:0 0 2px;margin:0 0 0 -14px;font:inherit;font-size:12px;
+      color:var(--dim);cursor:pointer;letter-spacing:.06em;text-transform:uppercase;transition:color .15s ease}
+.copy:hover{color:var(--accent)}
+.copy[data-done="1"]{color:var(--accent)}
 
 /* sections */
 section{border-top:1px solid var(--rule);padding:48px 0}
@@ -95,8 +112,14 @@ h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)
 /* publications */
 .pubs{display:grid;gap:40px}
 .pubs h3{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.25;margin:0 0 10px}
+.pubs h3 a{color:var(--ink);background-image:linear-gradient(var(--accent-soft),var(--accent-soft));
+           background-repeat:no-repeat;background-position:0 100%;background-size:0 1.5px;
+           transition:background-size .25s ease,color .2s ease}
+.pubs h3 a:hover{color:var(--accent);background-size:100% 1.5px}
 .authors{font-size:14px;color:var(--dim);margin:0 0 8px;line-height:1.6}
 .authors .me{color:var(--ink);font-weight:500}
+.credit{font-size:13px;color:var(--muted);margin:0 0 12px;line-height:1.6}
+.credit b{color:var(--body);font-weight:500}
 .venue{font-size:14px;color:#5a5449;margin:0 0 12px;font-style:italic}
 .links{display:flex;gap:20px;font-size:13px;flex-wrap:wrap;align-items:center}
 .linkish{background:none;border:0;padding:0;margin:0;font:inherit;color:var(--accent);cursor:pointer}
@@ -122,6 +145,7 @@ pre.bib[hidden]{display:none}
 .foot{border-top:1px solid var(--rule);padding:32px 0 56px;display:flex;justify-content:space-between;
       align-items:baseline;font-size:13px;color:var(--dim);flex-wrap:wrap;gap:12px}
 .foot-links{display:flex;gap:20px}
+.stamp{flex-basis:100%;font-size:12px;color:var(--dim);padding-top:6px}
 
 @media (max-width:640px){
   .wrap{padding:0 20px}
@@ -154,6 +178,7 @@ pre.bib[hidden]{display:none}
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
 <div class="wrap">
 
   <nav class="nav">
@@ -176,8 +201,10 @@ pre.bib[hidden]{display:none}
       <h1>Sai Karthik Kosuri</h1>
       <p class="lede">I research human-in-the-loop AI for evidence synthesis in medicine at the University of Pennsylvania, working with the Center for Integrative Global Oral Health and Penn CIS. I build systems that turn published clinical trials into living guidelines, and study speech and language markers of health in older adults.</p>
       <p class="interests"><span class="label">Research interests</span>Human-in-the-loop AI for systematic reviews &middot; NLP for health &middot; multimodal speech &amp; language analysis &middot; agentic LLM systems for clinical evidence</p>
+      <p class="collab"><span class="label">Working with</span>Chris Callison-Burch (Penn CIS) &middot; Alonso Carrasco-Labra and Michael Glick (Center for Integrative Global Oral Health) &middot; Sharath Chandra Guntuku (Penn CIS)</p>
       <div class="contact">
         <a href="mailto:karthik9@upenn.edu">karthik9@upenn.edu</a>
+        <button class="copy" type="button" data-copy="karthik9@upenn.edu" aria-label="Copy email address to clipboard">Copy</button>
         <a href="https://www.linkedin.com/in/karthikkosuri9/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/karthik-strikes" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="assets/kosuri-cv.pdf">CV (PDF)</a>
@@ -202,7 +229,7 @@ pre.bib[hidden]{display:none}
 
       <article>
         <h3>Hearing loneliness in how older adults speak</h3>
-        <p>Loneliness raises the risk of depression, cognitive decline, and mortality, yet objective ways to detect it barely exist outside a clinical interview. Working from 1,465 semi-structured telephone interviews with 310 adults aged 53 to 103, I combined psycholinguistic dictionaries, n-grams, and topic models with acoustic features including pitch, tone, and loudness.</p>
+        <p>Loneliness raises the risk of depression, cognitive decline, and mortality, yet objective ways to detect it barely exist outside a clinical interview. Working from 1,465 semi-structured telephone interviews with 310 adults aged 53 to 103, we combined psycholinguistic dictionaries, n-grams, and topic models with acoustic features including pitch, tone, and loudness. I led the formal analysis alongside the first author.</p>
         <p>Higher loneliness tracked negations, negative tone, and conflict-related language. Lower loneliness tracked social references, motivational drives, and emotional richness in delivery. The multimodal model (r = 0.298) beat both the text-only and audio-only models, which points to speech as an early signal to use alongside existing assessments rather than as a diagnostic on its own.</p>
         <div class="links">
           <a href="https://arxiv.org/abs/2609.02606" target="_blank" rel="noopener noreferrer">arXiv</a>
@@ -232,7 +259,7 @@ pre.bib[hidden]{display:none}
     <h2>Publications</h2>
     <div class="pubs">
       <article>
-        <h3>EviStreams: Human-in-the-Loop AI Data Extraction for Systematic Reviews in Medicine</h3>
+        <h3><a href="assets/evistreams-emnlp-2026.pdf" target="_blank" rel="noopener noreferrer">EviStreams: Human-in-the-Loop AI Data Extraction for Systematic Reviews in Medicine</a></h3>
         <p class="authors"><span class="me">Sai Karthik Kosuri</span>, Ankita Shashikant Bhosale, Michael Glick, Alonso Carrasco-Labra, Chris Callison-Burch</p>
         <p class="venue">Accepted at EMNLP 2026, System Demonstrations. To appear.</p>
         <div class="links">
@@ -243,9 +270,10 @@ pre.bib[hidden]{display:none}
         </div>
       </article>
       <article>
-        <h3>Predictors of Loneliness in Older Adults Using Multimodal Analysis of Speech and Language</h3>
+        <h3><a href="https://arxiv.org/abs/2609.02606" target="_blank" rel="noopener noreferrer">Predictors of Loneliness in Older Adults Using Multimodal Analysis of Speech and Language</a></h3>
         <p class="authors">Vinmay Khandode, <span class="me">Sai Karthik Kosuri</span>, Neil K. R. Sehgal, Adam Greene, Elif Alpoge, Elana Duffy, Matthew Lee Smith, Thomas K.M. Cudjoe, Sharath Chandra Guntuku</p>
         <p class="venue">arXiv preprint arXiv:2609.02606, 2026.</p>
+        <p class="credit"><b>My contribution:</b> formal analysis, shared with V. Khandode (CRediT statement in the paper).</p>
         <div class="links">
           <a href="https://arxiv.org/abs/2609.02606" target="_blank" rel="noopener noreferrer">arXiv</a>
           <a href="assets/loneliness-arxiv-2609.02606.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
@@ -344,6 +372,7 @@ pre.bib[hidden]{display:none}
       <a href="https://www.linkedin.com/in/karthikkosuri9/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="https://github.com/karthik-strikes" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
+    <div class="stamp">Last updated <time datetime="2026-09-07">7 September 2026</time></div>
   </footer>
 
 </div>
@@ -357,6 +386,73 @@ document.querySelectorAll('[data-bib]').forEach(function (btn) {
     btn.setAttribute('aria-expanded', String(open));
   });
 });
+
+/* copy email to clipboard */
+document.querySelectorAll('.copy').forEach(function (btn) {
+  var label = btn.textContent;
+
+  function flash(msg) {
+    btn.textContent = msg;
+    btn.dataset.done = '1';
+    setTimeout(function () { btn.textContent = label; delete btn.dataset.done; }, 1800);
+  }
+
+  /* works without the async clipboard API, and when the page is not focused */
+  function legacyCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  btn.addEventListener('click', function () {
+    var text = btn.dataset.copy;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(
+        function () { flash('Copied ✓'); },
+        function () { flash(legacyCopy(text) ? 'Copied ✓' : 'Copy failed'); }
+      );
+    } else {
+      flash(legacyCopy(text) ? 'Copied ✓' : 'Copy failed');
+    }
+  });
+});
+
+/* highlight the nav link for the section currently in view */
+(function () {
+  var links = [], sections = [];
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(function (a) {
+    var el = document.getElementById(a.getAttribute('href').slice(1));
+    if (el) { links.push(a); sections.push(el); }
+  });
+  if (!sections.length) return;
+
+  /* measure once so scrolling stays pure arithmetic, no layout thrash */
+  var tops = [];
+  function measure() {
+    var y = window.pageYOffset;
+    tops = sections.map(function (el) { return el.getBoundingClientRect().top + y; });
+  }
+  function update() {
+    var y = window.pageYOffset, line = y + 120, current = -1;
+    for (var i = 0; i < tops.length; i++) if (tops[i] <= line) current = i;
+    /* at the very bottom the last section wins even if its top sits above the line */
+    if (y + window.innerHeight >= document.documentElement.scrollHeight - 2) current = links.length - 1;
+    for (var j = 0; j < links.length; j++) links[j].classList.toggle('active', j === current);
+  }
+  function refresh() { measure(); update(); }
+
+  addEventListener('scroll', update, { passive: true });
+  addEventListener('resize', refresh);
+  addEventListener('load', refresh);          /* re-measure once webfonts have settled */
+  refresh();
+})();
 </script>
 
 <script type="application/ld+json">
