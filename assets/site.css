@@ -64,6 +64,9 @@ img{max-width:100%}
        display:block;margin-bottom:8px}
 .meta{font-size:14px;line-height:1.7;color:var(--muted);margin:0 0 18px;text-wrap:pretty}
 .rule{border:0;border-top:1px solid var(--rule);margin:38px 0}
+.callout{border-left:3px solid var(--accent-soft);padding:4px 0 4px 18px;margin:26px 0;
+         font-size:15.5px;line-height:1.7;color:var(--body);font-style:italic}
+.callout strong{font-style:normal;font-weight:600;color:var(--ink)}
 
 /* news + talks lists */
 .news{list-style:disc;margin:0;padding-left:20px;display:grid;gap:11px}
