@@ -1,12 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="K">
   <title>Sai Karthik Kosuri</title>
-  <clipPath id="k"><polygon points="20.8,5.44 43.2,5.44 58.56,20.8 58.56,43.2 43.2,58.56 20.8,58.56 5.44,43.2 5.44,20.8"/></clipPath>
-  <polygon points="15.36,0 48.64,0 64,15.36 64,48.64 48.64,64 15.36,64 0,48.64 0,15.36" fill="#2f6b4a"/>
-  <g clip-path="url(#k)">
-    <rect x="12.8" y="12.8" width="10.88" height="38.4" fill="#faf7f2"/>
-    <g stroke="#faf7f2" stroke-width="10.24" fill="none">
-      <line x1="18.24" y1="32" x2="44.29" y2="12.8"/>
-      <line x1="18.24" y1="32" x2="44.29" y2="51.2"/>
+  <defs>
+    <clipPath id="b"><rect x="8.32" y="8.32" width="47.36" height="47.36"/></clipPath>
+    <mask id="g">
+      <rect width="64" height="64" fill="#fff"/>
+      <rect x="4.8" y="4.8" width="19.2" height="54.4" fill="#000"/>
+      <line x1="14.4" y1="32" x2="63.36" y2="0.64"
+            stroke="#000" stroke-width="19.2"/>
+    </mask>
+  </defs>
+  <rect width="64" height="64" rx="10.88" fill="#faf7f2"/>
+  <g clip-path="url(#b)">
+    <g fill="#1d1b17">
+      <rect x="8.32" y="8.32" width="12.16" height="47.36"/>
     </g>
+    <line x1="14.4" y1="32" x2="63.36" y2="0.64"
+          stroke="#1d1b17" stroke-width="12.16"/>
+    <line x1="14.4" y1="32" x2="63.36" y2="63.36"
+          stroke="#2f6b4a" stroke-width="12.16" mask="url(#g)"/>
   </g>
 </svg>
