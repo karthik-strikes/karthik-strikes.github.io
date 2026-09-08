@@ -76,6 +76,16 @@ h1{font-family:var(--serif);font-weight:500;font-size:56px;line-height:1.05;marg
 section{border-top:1px solid var(--rule);padding:48px 0}
 h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);font-weight:600;margin:0 0 30px}
 #experience h2{margin-bottom:36px}
+
+/* selected research */
+.research{display:grid;gap:38px;max-width:700px}
+.research h3{font-family:var(--serif);font-weight:600;font-size:25px;line-height:1.25;margin:0 0 12px;letter-spacing:-.005em}
+.research p{font-size:15.5px;line-height:1.7;color:var(--body);margin:0 0 14px;text-wrap:pretty}
+.research .links{font-size:13px}
+.tag{display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+     color:var(--accent);border:1px solid var(--accent-soft);border-radius:3px;padding:2px 6px;
+     vertical-align:1px;margin-right:8px}
+
 .stack{display:grid;gap:16px;max-width:680px}
 .stack.loose{gap:18px}
 .row{display:grid;grid-template-columns:110px 1fr;gap:20px;font-size:15px;line-height:1.6}
@@ -149,6 +159,7 @@ pre.bib[hidden]{display:none}
   <nav class="nav">
     <a class="nav-name" href="#top">Sai Karthik Kosuri</a>
     <div class="nav-links">
+      <a href="#research">Research</a>
       <a href="#news">News</a>
       <a href="#publications">Publications</a>
       <a href="#talks">Talks</a>
@@ -173,6 +184,39 @@ pre.bib[hidden]{display:none}
       </div>
     </div>
   </header>
+
+  <section id="research">
+    <h2>Selected Research</h2>
+    <div class="research">
+
+      <article>
+        <h3>Keeping systematic reviews auditable when AI does the extraction</h3>
+        <p>Systematic reviews sit underneath clinical guidelines, and their authority comes from protocol: two reviewers extract every study independently, an adjudicator settles disagreements, and each value stays traceable to the passage it came from. That protocol is also what makes naive LLM assistance unusable, however good the model is.</p>
+        <p>EviStreams is a no-code platform that inserts human judgment at three points instead of one. A domain expert defines typed fields rather than prompts, approves a structured decomposition before any code runs, then resolves a reviewer-blinded dual review into an auditable consensus export. Evaluating four clinical corpora across three frontier model families produced the result I did not expect: extraction quality is shaped far more by the field specification than by which model runs it.</p>
+        <div class="links">
+          <a href="#publications">EMNLP 2026</a>
+          <a href="https://evistreams.com/demo" target="_blank" rel="noopener noreferrer">Live demo</a>
+          <a href="https://github.com/karthik-strikes/evistream_backend" target="_blank" rel="noopener noreferrer">Code</a>
+        </div>
+      </article>
+
+      <article>
+        <h3>Hearing loneliness in how older adults speak</h3>
+        <p>Loneliness raises the risk of depression, cognitive decline, and mortality, yet objective ways to detect it barely exist outside a clinical interview. Working from 1,465 semi-structured telephone interviews with 310 adults aged 53 to 103, I combined psycholinguistic dictionaries, n-grams, and topic models with acoustic features including pitch, tone, and loudness.</p>
+        <p>Higher loneliness tracked negations, negative tone, and conflict-related language. Lower loneliness tracked social references, motivational drives, and emotional richness in delivery. The multimodal model (r = 0.298) beat both the text-only and audio-only models, which points to speech as an early signal to use alongside existing assessments rather than as a diagnostic on its own.</p>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2609.02606" target="_blank" rel="noopener noreferrer">arXiv</a>
+          <a href="assets/loneliness-arxiv-2609.02606.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+        </div>
+      </article>
+
+      <article>
+        <h3>Retrieval over the clinical literature at scale</h3>
+        <p>Living guidelines only work if the evidence base underneath them stays queryable as it grows. I built a retrieval system over 45,000 clinical PDFs using GTE-ModernColBERT late-interaction embeddings in Weaviate, exposed through an MCP server so that agents can query the corpus directly rather than through a bespoke API. It is the infrastructure the extraction work depends on.</p>
+      </article>
+
+    </div>
+  </section>
 
   <section id="news">
     <h2>News</h2>
@@ -226,7 +270,7 @@ pre.bib[hidden]{display:none}
     <div class="stack loose">
       <div class="row">
         <div class="when">Oct 2026</div>
-        <div class="what">System demonstration of <a href="https://evistreams.com/demo" target="_blank" rel="noopener noreferrer">EviStreams</a> at EMNLP 2026.</div>
+        <div class="what"><span class="tag">Upcoming</span>Will present a system demonstration of <a href="https://evistreams.com/demo" target="_blank" rel="noopener noreferrer">EviStreams</a> at EMNLP 2026.</div>
       </div>
       <div class="row">
         <div class="when">Mar 2026</div>
