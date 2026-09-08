@@ -99,6 +99,25 @@ img{max-width:100%}
 .links{display:flex;gap:20px;font-size:12.5px;flex-wrap:wrap;align-items:center}
 .linkish{background:none;border:0;padding:0;margin:0;font:inherit;color:var(--accent);cursor:pointer}
 .linkish:hover{color:var(--ink)}
+
+/* artifact chips — one row of everything a paper ships with */
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.chip{display:inline-flex;align-items:center;cursor:pointer;
+      font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;line-height:1;
+      background:var(--panel);border:1px solid var(--rule);border-radius:3px;padding:6px 9px;
+      color:var(--body);transition:background .15s ease,border-color .15s ease,color .15s ease}
+.chip:hover{background:var(--accent-wash);border-color:var(--accent-soft);color:var(--ink)}
+/* two-tone id chip: label on the left, the actual identifier on the right */
+.chip-id{padding:0;border:0;overflow:hidden}
+.chip-id span{padding:7px 9px}
+.chip-id .k{background:var(--ink);color:var(--bg)}
+.chip-id .v{background:var(--accent);color:#fff}
+.chip-id:hover .v{background:var(--ink)}
+
+/* news type tags */
+.ntag{display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+      font-size:10.5px;line-height:1;background:var(--accent-wash);color:var(--accent);
+      border-radius:3px;padding:4px 7px;margin-right:7px;vertical-align:1px}
 pre.bib{background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:16px 18px;
         font-size:12px;line-height:1.6;overflow-x:auto;margin:14px 0 0;
         font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--body);white-space:pre-wrap}
