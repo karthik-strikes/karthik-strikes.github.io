@@ -1,6 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="K">
-  <rect width="64" height="64" rx="12" fill="#faf7f2"/>
-  <text x="32" y="45" text-anchor="middle"
-        font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600"
-        fill="#2f6b4a">K</text>
+  <title>Sai Karthik Kosuri</title>
+  <clipPath id="k"><polygon points="20.8,5.44 43.2,5.44 58.56,20.8 58.56,43.2 43.2,58.56 20.8,58.56 5.44,43.2 5.44,20.8"/></clipPath>
+  <polygon points="15.36,0 48.64,0 64,15.36 64,48.64 48.64,64 15.36,64 0,48.64 0,15.36" fill="#2f6b4a"/>
+  <g clip-path="url(#k)">
+    <rect x="12.8" y="12.8" width="10.88" height="38.4" fill="#faf7f2"/>
+    <g stroke="#faf7f2" stroke-width="10.24" fill="none">
+      <line x1="18.24" y1="32" x2="44.29" y2="12.8"/>
+      <line x1="18.24" y1="32" x2="44.29" y2="51.2"/>
+    </g>
+  </g>
 </svg>
