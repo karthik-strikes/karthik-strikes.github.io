@@ -1,0 +1,163 @@
+:root{
+  --bg:#faf7f2; --ink:#1d1b17; --body:#4a453c; --muted:#6d675c; --dim:#756d5d;
+  --rule:#e7e1d5; --rule-soft:#efe9dd; --panel:#f2eee4;
+  --accent:#2f6b4a; --accent-soft:#8fc3a6; --accent-wash:#c9e6d5;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Public Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --shell:1000px;
+}
+@supports (color: oklch(0.45 0.09 155)){
+  :root{ --accent:oklch(0.45 0.09 155); --accent-soft:oklch(0.75 0.06 155); --accent-wash:oklch(0.9 0.04 155); }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--ink)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+::selection{background:var(--accent-wash)}
+img{max-width:100%}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--bg);color:var(--accent);
+      border:1px solid var(--accent);border-radius:3px;padding:10px 16px;font-size:14px;z-index:100}
+.skip:focus{left:16px;top:16px}
+
+/* masthead */
+.masthead{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--rule)}
+.masthead-inner{max-width:var(--shell);margin:0 auto;padding:22px 24px 18px;
+                display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.nav-name{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink);white-space:nowrap}
+.nav-links{display:flex;gap:22px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+           flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{color:var(--muted);padding-bottom:4px;border-bottom:2px solid transparent;
+             transition:color .15s ease,border-color .15s ease}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.cv{color:var(--accent)}
+.nav-links a.active{color:var(--ink);border-bottom-color:var(--accent)}
+
+/* two-column shell */
+.shell{max-width:var(--shell);margin:0 auto;padding:52px 24px 8px;
+       display:grid;grid-template-columns:200px 1fr;gap:56px;align-items:start}
+
+/* sidebar */
+.side{position:sticky;top:96px}
+.side-photo{width:160px;height:160px;border-radius:50%;object-fit:cover;
+            border:1px solid var(--rule);display:block}
+.side-name{font-family:var(--serif);font-size:23px;font-weight:600;line-height:1.15;margin:18px 0 6px}
+.side-role{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+           line-height:1.5;margin-bottom:14px}
+.side-mail{display:block;font-size:13px;color:var(--muted);word-break:break-all;margin-bottom:16px}
+.side-mail:hover{color:var(--accent)}
+.side-links{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:13px}
+.side-links a{color:var(--accent)}
+.side-links a:hover{color:var(--ink)}
+
+/* main column */
+.main{min-width:0;max-width:720px}
+.page-title{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.15;
+            margin:0 0 22px;letter-spacing:-.005em}
+.sec{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.2;
+     margin:48px 0 18px;letter-spacing:-.005em}
+.sec:first-child{margin-top:0}
+.lede{font-size:16px;line-height:1.75;color:var(--body);margin:0 0 18px;text-wrap:pretty}
+.label{color:var(--dim);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+       display:block;margin-bottom:8px}
+.meta{font-size:14px;line-height:1.7;color:var(--muted);margin:0 0 18px;text-wrap:pretty}
+.rule{border:0;border-top:1px solid var(--rule);margin:38px 0}
+
+/* news + talks lists */
+.news{list-style:disc;margin:0;padding-left:20px;display:grid;gap:11px}
+.news li{font-size:14.5px;line-height:1.7;color:var(--body);padding-left:2px}
+.news li::marker{color:var(--accent-soft)}
+.news .when{color:var(--accent);font-weight:500;margin-right:2px}
+.tag{display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+     color:var(--accent);border:1px solid var(--accent-soft);border-radius:3px;padding:2px 6px;
+     vertical-align:1px;margin-right:8px}
+
+/* selected research */
+.research{display:grid;gap:38px}
+.research h3{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.25;
+             margin:0 0 12px;letter-spacing:-.005em}
+.research p{font-size:14.5px;line-height:1.75;color:var(--body);margin:0 0 14px;text-wrap:pretty}
+.research .links{font-size:12.5px}
+
+/* publications */
+.pubs{display:grid;gap:38px}
+.pubs h3{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.25;margin:0 0 10px}
+.pubs h3 a{color:var(--ink);background-image:linear-gradient(var(--accent-soft),var(--accent-soft));
+           background-repeat:no-repeat;background-position:0 100%;background-size:0 1.5px;
+           transition:background-size .25s ease,color .2s ease}
+.pubs h3 a:hover{color:var(--accent);background-size:100% 1.5px}
+.authors{font-size:13px;color:var(--dim);margin:0 0 8px;line-height:1.6}
+.authors .me{color:var(--ink);font-weight:500}
+.credit{font-size:12.5px;color:var(--muted);margin:0 0 12px;line-height:1.6}
+.credit b{color:var(--body);font-weight:500}
+.venue{font-size:13px;color:#5a5449;margin:0 0 12px;font-style:italic}
+.links{display:flex;gap:20px;font-size:12.5px;flex-wrap:wrap;align-items:center}
+.linkish{background:none;border:0;padding:0;margin:0;font:inherit;color:var(--accent);cursor:pointer}
+.linkish:hover{color:var(--ink)}
+pre.bib{background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:16px 18px;
+        font-size:12px;line-height:1.6;overflow-x:auto;margin:14px 0 0;
+        font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--body);white-space:pre-wrap}
+pre.bib[hidden]{display:none}
+.earlier{border-top:1px solid var(--rule-soft);padding-top:22px;font-size:12.5px;
+         line-height:1.7;color:var(--dim)}
+
+/* experience + education */
+.entries{display:grid;gap:38px}
+.entry{display:grid;grid-template-columns:150px 1fr;gap:22px}
+.entry .when{font-size:12.5px;color:var(--dim);line-height:1.6}
+.entry h3{font-family:var(--serif);font-weight:600;font-size:21px;margin:0 0 4px}
+.role{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.entry ul{margin:0;padding-left:18px;display:grid;gap:9px;font-size:14px;line-height:1.65;color:var(--body)}
+.edu{display:grid;gap:22px}
+.edu .school{font-family:var(--serif);font-weight:600;font-size:18px}
+.edu .detail{font-size:13px;color:#5a5449}
+
+/* footer */
+.foot-wrap{border-top:1px solid var(--rule);margin-top:64px}
+.foot{max-width:var(--shell);margin:0 auto;padding:28px 24px 56px;
+      display:flex;justify-content:space-between;align-items:baseline;
+      font-size:12.5px;color:var(--dim);flex-wrap:wrap;gap:12px}
+.foot-links{display:flex;gap:20px}
+.stamp{flex-basis:100%;font-size:12px;color:var(--dim);padding-top:6px}
+
+/* the sidebar sits above the content once there is no room beside it */
+@media (max-width:860px){
+  .shell{grid-template-columns:1fr;gap:32px;padding-top:34px}
+  .side{position:static;display:grid;grid-template-columns:112px 1fr;gap:22px;align-items:start;
+        border-bottom:1px solid var(--rule-soft);padding-bottom:26px}
+  .side-photo{width:112px;height:112px}
+  .side-name{margin:0 0 4px}
+  .side-role{margin-bottom:10px}
+  .side-mail{margin-bottom:10px}
+  /* flex-wrap, not grid columns: a fixed column count overflows around 470px */
+  .side-links{display:flex;flex-wrap:wrap;gap:8px 18px}
+  .main{max-width:none}
+}
+
+@media (max-width:640px){
+  .masthead-inner{flex-direction:column;align-items:flex-start;gap:12px;padding:18px 20px 14px}
+  .nav-links{justify-content:flex-start;gap:16px;row-gap:8px}
+  .shell{padding-left:20px;padding-right:20px}
+  .foot{padding-left:20px;padding-right:20px}
+  .page-title{font-size:29px}
+  .sec{font-size:23px;margin-top:38px}
+  .entry{grid-template-columns:1fr;gap:8px}
+}
+
+/* keep photo and name side by side even on small phones, so the content
+   is not pushed a full screen down by the sidebar */
+@media (max-width:460px){
+  .side{grid-template-columns:92px 1fr;gap:16px}
+  .side-photo{width:92px;height:92px}
+  .side-name{font-size:21px}
+  .page-title{font-size:26px}
+}
+
+@media print{
+  .masthead,.skip,.side-links{display:none}
+  body{background:#fff}
+  a{color:#000}
+  .shell{display:block;max-width:none;padding:0}
+}
