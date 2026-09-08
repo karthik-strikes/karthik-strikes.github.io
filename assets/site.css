@@ -114,6 +114,14 @@ img{max-width:100%}
 .chip-id .v{background:var(--accent);color:#fff}
 .chip-id:hover .v{background:var(--ink)}
 
+/* figures */
+.fig{margin:24px 0 0}
+.fig img{display:block;width:100%;height:auto;background:#fff;
+         border:1px solid var(--rule);border-radius:4px;transition:border-color .15s ease}
+.fig a:hover img{border-color:var(--accent-soft)}
+.fig figcaption{font-size:12.5px;line-height:1.65;color:var(--dim);margin-top:10px}
+.fig + .links{margin-top:20px}
+
 /* news type tags */
 .ntag{display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
       font-size:10.5px;line-height:1;background:var(--accent-wash);color:var(--accent);

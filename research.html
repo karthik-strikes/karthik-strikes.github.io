@@ -71,9 +71,16 @@
         <h3>Keeping systematic reviews auditable when AI does the extraction</h3>
         <p>Systematic reviews sit underneath clinical guidelines, and their authority comes from protocol: two reviewers extract every study independently, an adjudicator settles disagreements, and each value stays traceable to the passage it came from. That protocol is also what makes naive LLM assistance unusable, however good the model is.</p>
         <p>EviStreams is a no-code platform that inserts human judgment at three points instead of one. A domain expert defines typed fields rather than prompts, approves a structured decomposition before any code runs, then resolves a reviewer-blinded dual review into an auditable consensus export. Evaluating four clinical corpora across three frontier model families produced the result I did not expect: extraction quality is shaped far more by the field specification than by which model runs it.</p>
+        <figure class="fig">
+          <a href="https://evistreams.com/demo" target="_blank" rel="noopener noreferrer">
+            <img src="assets/evistreams-review.jpg" width="1400" height="1319" loading="lazy"
+                 alt="The EviStreams adjudication screen. Four fields where the AI and both reviewers agreed are collapsed and marked Agreed. Two fields needing a decision are expanded, each showing the AI value, Reviewer 1 value and Reviewer 2 value side by side with buttons to accept one, enter a custom value, or mark it not reported.">
+          </a>
+          <figcaption>Reviewer-blinded dual review. Agreements collapse; disagreements surface side by side for a human to resolve, and every choice is recorded. <a href="https://evistreams.com/demo" target="_blank" rel="noopener noreferrer">Try the live demo &rarr;</a></figcaption>
+        </figure>
+
         <div class="links">
           <a href="publications.html">EMNLP 2026</a>
-          <a href="https://evistreams.com/demo" target="_blank" rel="noopener noreferrer">Live demo</a>
           <a href="https://github.com/karthik-strikes/evistream_backend" target="_blank" rel="noopener noreferrer">Code</a>
         </div>
       </article>
