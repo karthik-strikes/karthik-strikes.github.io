@@ -123,8 +123,8 @@ pre.bib{background:var(--panel);border:1px solid var(--rule);border-radius:4px;p
         font-size:12px;line-height:1.6;overflow-x:auto;margin:14px 0 0;
         font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--body);white-space:pre-wrap}
 pre.bib[hidden]{display:none}
-.earlier{border-top:1px solid var(--rule-soft);padding-top:22px;font-size:12.5px;
-         line-height:1.7;color:var(--dim)}
+.earlier{border-top:1px solid var(--rule-soft);padding-top:24px}
+.earlier h3{font-size:19px}          /* title-first like the others, just a shade quieter */
 
 /* experience + education */
 .entries{display:grid;gap:38px}
