@@ -100,20 +100,20 @@ img{max-width:100%}
 .linkish{background:none;border:0;padding:0;margin:0;font:inherit;color:var(--accent);cursor:pointer}
 .linkish:hover{color:var(--ink)}
 
-/* artifact chips — one row of everything a paper ships with */
-.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
-.chip{display:inline-flex;align-items:center;cursor:pointer;
-      font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;line-height:1;
-      background:var(--panel);border:1px solid var(--rule);border-radius:3px;padding:6px 9px;
-      color:var(--body);transition:background .15s ease,border-color .15s ease,color .15s ease}
-.chip:hover{background:var(--accent-wash);border-color:var(--accent-soft);color:var(--ink)}
-.chip .gh{width:12px;height:12px;margin-right:5px;flex:none}
-/* two-tone id chip: label on the left, the actual identifier on the right */
-.chip-id{padding:0;border:0;overflow:hidden}
-.chip-id span{padding:7px 9px}
-.chip-id .k{background:var(--ink);color:var(--bg)}
-.chip-id .v{background:var(--accent);color:#fff}
-.chip-id:hover .v{background:var(--ink)}
+/* artifact links: uppercase, underlined, middot separated */
+.dotlinks{margin-top:14px;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;line-height:2.1}
+.dotlinks a,.dotlinks button{color:var(--accent);border:0;background:none;padding:0;margin:0;
+      font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;white-space:nowrap;
+      transition:color .15s ease}
+/* rule under the word only, never under the icon or the separator */
+.dotlinks a > span,.dotlinks button > span{border-bottom:1px solid var(--accent-soft);
+      padding-bottom:2px;transition:border-color .15s ease}
+.dotlinks a:hover,.dotlinks button:hover{color:var(--ink)}
+.dotlinks a:hover > span,.dotlinks button:hover > span{border-bottom-color:var(--ink)}
+/* separator belongs to the following item, so it never dangles at a line end */
+.dotlinks a + a::before,.dotlinks a + button::before,.dotlinks button + a::before{
+      content:"\00B7";color:var(--dim);margin:0 10px;border:0;display:inline-block}
+.dotlinks .gh{width:12px;height:12px;margin-right:5px;vertical-align:-1px}
 
 /* news type tags */
 .ntag{display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
