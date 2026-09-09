@@ -107,6 +107,7 @@ img{max-width:100%}
       background:var(--panel);border:1px solid var(--rule);border-radius:3px;padding:6px 9px;
       color:var(--body);transition:background .15s ease,border-color .15s ease,color .15s ease}
 .chip:hover{background:var(--accent-wash);border-color:var(--accent-soft);color:var(--ink)}
+.chip .gh{width:12px;height:12px;margin-right:5px;flex:none}
 /* two-tone id chip: label on the left, the actual identifier on the right */
 .chip-id{padding:0;border:0;overflow:hidden}
 .chip-id span{padding:7px 9px}
