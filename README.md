@@ -4,7 +4,7 @@ Personal research site for Sai Karthik Kosuri. Plain static HTML and CSS, no bui
 no framework, no runtime dependencies beyond a Google Fonts stylesheet.
 
 ```
-index.html                 the whole site
+index.html / publications.html / research.html / experience.html
 favicon.svg
 robots.txt / sitemap.xml
 .nojekyll                  tells GitHub Pages to serve files verbatim
@@ -12,8 +12,6 @@ assets/
   headshot.jpg             EXIF stripped
   iadr-2026-poster.jpg
   kosuri-cv.pdf
-  evistreams-emnlp-2026.pdf
-  loneliness-arxiv-2609.02606.pdf
 ```
 
 ## Local preview
